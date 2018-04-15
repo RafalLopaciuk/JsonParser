@@ -14,9 +14,18 @@ namespace JsonParser.Models
 
         public ParseJson(string filename)
         {
-            string jsonData = File.ReadAllText(filename);
+            try
+            {
+                string jsonData = File.ReadAllText(filename);
 
-            ListOfPersons = JsonConvert.DeserializeObject<List<Person>>(jsonData);
+                ListOfPersons = JsonConvert.DeserializeObject<List<Person>>(jsonData);
+
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine("Loading error!");
+            }
+            
         }
 
         public int getFemaleCount()
