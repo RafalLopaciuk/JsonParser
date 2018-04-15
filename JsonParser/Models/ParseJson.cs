@@ -24,8 +24,7 @@ namespace JsonParser.Models
             catch (Exception Ex)
             {
                 Console.WriteLine("Loading error!");
-            }
-            
+            }           
         }
 
         public int getFemaleCount()
